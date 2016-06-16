@@ -23,10 +23,10 @@ class LoginController extends Controller
         if(\Auth::attempt(['telefoneUsuario' => $request->telefone, 'password' => $request->senha, 'statusUsuario' => 1])){
             \Session::flush();
 
-            return Redirect::Route('dashboard.index');
+            //return Redirect::Guest('dashboard.index');
 
             if(\Auth::check()){
-                return view('dashboard')->with('usuario', \Auth::user());
+                return view('Autenticacao/dashboard')->with('usuario', \Auth::user());
             }
             //return \Route::auth();
 

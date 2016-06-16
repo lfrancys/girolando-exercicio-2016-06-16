@@ -66,7 +66,8 @@ A home exibe um formulário de login?
             ->type($usuario->telefoneUsuario, 'telefone')
             ->type($usuario->password, 'senha')
             ->press('Entrar')
-            ->see('Bem vindo '.$usuario->nomeUsuario.' !')
-            ->seePageIs('dashboard');
+            //->be('auth')
+            ->seePageIs('dashboard')
+            ->see('Bem vindo '.$usuario->nomeUsuario.' !');
     }
 }

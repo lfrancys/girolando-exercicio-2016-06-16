@@ -19,10 +19,10 @@ Route::resource('/', 'HomeController', ['only' => 'index']);
 Route::resource('autenticar', 'Autenticacao\LoginController', ['only' => 'store']);
 Route::resource('sair', 'Autenticacao\LoginController', ['only' => 'index']);
 
-Route::group(['middleware' => 'auth'], function()
+/*Route::group(['middleware' => 'auth'], function()
 {
     Route::resource('dashboard', 'Autenticacao\DashboardController', ['only' => ['index']]);
-});
+});*/
 
 
-//Route::resource('dashboard', 'Autenticacao\DashboardController', ['only' => ['index']]);
+Route::resource('dashboard', 'Autenticacao\DashboardController', ['only' => ['index']]);
