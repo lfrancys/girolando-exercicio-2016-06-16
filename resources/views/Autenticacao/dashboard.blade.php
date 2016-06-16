@@ -38,7 +38,7 @@
 <body>
 <div class="container">
     <div id="content">
-        <form action="{{route('')}}" method="get">
+        <form action="{{route('sair.index')}}" method="get">
 
             <div class="title">Bem vindo {{ $usuario->nomeUsuario }} !</div>
 
