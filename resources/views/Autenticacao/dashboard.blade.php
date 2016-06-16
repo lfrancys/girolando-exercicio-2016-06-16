@@ -38,34 +38,19 @@
 <body>
 <div class="container">
     <div id="content">
-        <h1> Projeto Girolando</h1>
+        <form action="{{route('')}}" method="get">
 
-        <form action="{{ route('autenticar.store') }}" method="post">
-            <input type="hidden" value="{{ csrf_token() }}" name="_token" />
+            <div class="title">Bem vindo {{ $usuario->nomeUsuario }} !</div>
 
-            <table style="font-family: arial">
-                <tr>
-                    <td> Telefone: </td>
-                    <td> <input type="text" name="telefone" /> </td>
-                </tr>
-                <tr>
-                    <td> Senha: </td>
-                    <td> <input type="password" name="senha" /> </td>
-                </tr>
+            <input type="submit" name="btnSair" value="Sair">
 
-                <tr>
-                    <td colspan="2">
-                        <input type="submit" value="Entrar"/>
-                    </td>
-                </tr>
-            </table>
-
-            @if(\Session::has('flash_notice'))
-                <div class="alert-box success">
-                    <h2>{{ Session::get('flash_notice') }}</h2>
-                </div>
-            @endif
         </form>
+
+        @if(\Session::has('flash_notice'))
+            <div class="alert-box success">
+                <h2>{{ Session::get('flash_notice') }}</h2>
+            </div>
+        @endif
     </div>
 </div>
 </body>
